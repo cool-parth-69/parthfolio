@@ -34,9 +34,6 @@
     <canvas id="heroCanvas"></canvas>
     <div class="hero-noise"></div>
     <div class="hero-content">
-      <div class="hero-badge" id="heroBadge">
-        <span class="badge-dot"></span>Available for opportunities
-      </div>
       <h1 class="hero-name" id="heroName">
         <span class="name-first">Parth</span>
         <span class="name-last">Tiwari</span>
@@ -46,17 +43,14 @@
         <span class="title-sep">·</span>
         <span class="title-item">Data Scientist</span>
         <span class="title-sep">·</span>
-        <span class="title-item">GenAI Developer</span>
+        <span class="title-item">Python Developer</span>
       </div>
       <p class="hero-tagline" id="heroTagline">Building intelligent systems that turn data into decisions.</p>
       <div class="hero-buttons" id="heroButtons">
+        <a href="https://www.linkedin.com/in/parth4tiwari/" target="_blank" class="btn btn-outline"><span>LinkedIn</span><i class="fa-brands fa-linkedin"></i></a>
+        <a href="Parth Tiwari.pdf" class="btn btn-outline"><span>Download Resume</span><i class="fa-solid fa-file-arrow-down"></i></a>
         <a href="#projects" class="btn btn-primary"><span>View Projects</span><i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#contact" class="btn btn-outline"><span>Contact Me</span><i class="fa-solid fa-paper-plane"></i></a>
       </div>
-    </div>
-    <div class="hero-scroll-hint" id="heroScroll">
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-      <span>Scroll</span>
     </div>
   </section>
 
@@ -69,9 +63,8 @@
           <p>I am an AI and software developer focused on building intelligent applications, data-driven systems, and scalable backend solutions. My work involves developing AI agents, retrieval-augmented generation (RAG) systems, and data analysis tools that help extract insights from complex datasets.</p>
           <p>I enjoy combining machine learning, cloud technologies, and modern web development to create practical, high-impact solutions.</p>
           <div class="about-stats">
-            <div class="stat reveal-up"><span class="stat-num">4+</span><span class="stat-label">Projects Shipped</span></div>
-            <div class="stat reveal-up"><span class="stat-num">2+</span><span class="stat-label">Years in AI</span></div>
-            <div class="stat reveal-up"><span class="stat-num">8.64</span><span class="stat-label">Masters CGPI</span></div>
+            <div class="stat reveal-up"><span class="stat-num">3+</span><span class="stat-label">POC Shipped</span></div>
+            <div class="stat reveal-up"><span class="stat-num">1+</span><span class="stat-label">Years in AI</span></div>
           </div>
         </div>
         <div class="about-edu">
@@ -112,7 +105,7 @@
           <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fa-solid fa-layer-group"></i></div><h3>Frameworks &amp; Tools</h3></div>
           <div class="skill-pills">
             <span class="pill">Flask</span><span class="pill">Pandas</span>
-            <span class="pill">IBM watsonx Assistant</span><span class="pill">IBM watsonx Studio</span><span class="pill">IBM watsonx Orchestrate</span>
+            <span class="pill">IBM watsonx Studio</span><span class="pill">IBM watsonx Orchestrate</span>
           </div>
         </div>
         <div class="skill-category reveal-up skill-featured">
@@ -130,6 +123,10 @@
           <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fa-solid fa-cloud"></i></div><h3>Cloud Platforms</h3></div>
           <div class="skill-pills"><span class="pill">IBM Cloud</span></div>
         </div>
+        <div class="skill-category reveal-up">
+          <div class="skill-cat-header"><div class="skill-cat-icon"><i class="fa-solid fa-code-branch"></i></div><h3>Version Control</h3></div>
+          <div class="skill-pills"><span class="pill">Git</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -144,7 +141,7 @@
           <div class="timeline-date">Jul 2025 – Present</div>
           <div class="timeline-card">
             <div class="timeline-header">
-              <div><h3>Data Scientist</h3><span class="timeline-company">Veracitiz Solutions</span></div>
+              <div><h3>Data Scientist / AI Engineer</h3><span class="timeline-company">Veracitiz Solutions</span></div>
               <span class="timeline-badge">Current</span>
             </div>
             <ul class="timeline-points">
@@ -177,64 +174,79 @@
   <section id="projects" class="section section-tint">
     <div class="container">
       <div class="section-eyebrow reveal">Projects</div>
-      <h2 class="section-title reveal">What I've<br /><em>Shipped.</em></h2>
+      <h2 class="section-title reveal">What I've<br /><em>Built.</em></h2>
       <div class="projects-grid">
-        <div class="project-card reveal-up">
-          <div class="project-top"><span class="project-num">01</span><div class="project-icon"><i class="fa-solid fa-network-wired"></i></div></div>
-          <h3>Agentic Supply Chain Workflows</h3>
-          <p>Automated task execution and decision support for supply chain management using agentic AI with multi-step reasoning loops.</p>
-          <div class="project-tech"><span>IBM watsonx Orchestrate</span><span>Python</span></div>
-          <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
-        </div>
-        <div class="project-card reveal-up">
-          <div class="project-top"><span class="project-num">02</span><div class="project-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div></div>
-          <h3>AI Invoice Reconciliation System</h3>
-          <p>End-to-end pipeline to extract, validate, and match data between PDF invoices and purchase orders with automated exception handling.</p>
-          <div class="project-tech"><span>Python</span><span>LLMs</span><span>JSON</span></div>
-          <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
-        </div>
-        <div class="project-card reveal-up">
-          <div class="project-top"><span class="project-num">03</span><div class="project-icon"><i class="fa-solid fa-comments"></i></div></div>
-          <h3>Context-Aware RAG Chatbot</h3>
-          <p>Interactive application that accurately answers user queries by retrieving relevant context from uploaded documents using vector search.</p>
-          <div class="project-tech"><span>Python</span><span>Vector Databases</span><span>GenAI</span></div>
-          <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
-        </div>
-        <div class="project-card reveal-up">
-          <div class="project-top"><span class="project-num">04</span><div class="project-icon"><i class="fa-solid fa-table-cells"></i></div></div>
-          <h3>Tabular Data Q&amp;A Bot</h3>
-          <p>A conversational interface that allows users to upload CSV/Excel files and query data using natural human language with instant insights.</p>
-          <div class="project-tech"><span>NLP</span><span>Pandas</span><span>Flask</span></div>
-          <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
-        </div>
+        <a href="https://youtu.be/weXrwN9QzQs?si=VD1XdtfPE1bPxh-m" target="_blank">
+          <div class="project-card reveal-up">
+            <div class="project-top"><span class="project-num">01</span><div class="project-icon"><i class="fa-solid fa-network-wired"></i></div></div>
+            <h3>Agentic Supply Chain Workflow</h3>
+            <p>Automated task execution and decision support for supply chain management using agentic AI with multi-step reasoning loops.</p>
+            <div class="project-tech"><span>Agentic AI</span><span>IBM watsonx Studio</span><span>IBM watsonx Orchestrate</span><span>Python</span></div>
+            <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
+          </div>
+        </a>
+
+        <a href="https://youtu.be/JQCQO7Bw6_A?si=54Q6NUoZql2_GQ0T" target="_blank">
+          <div class="project-card reveal-up">
+            <div class="project-top"><span class="project-num">02</span><div class="project-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div></div>
+            <h3>AI Invoice Reconciliation System</h3>
+            <p>End-to-end pipeline to extract, validate, and match data between PDF invoices and purchase orders with automated exception handling.</p>
+            <div class="project-tech"><span>Python</span><span>LLMs</span><span>JSON</span></div>
+            <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
+          </div>
+        </a>
+
+        <a href="https://youtu.be/qY6GhDDQFrY?si=GwPEUgNP4ksxFstt" target="_blank">
+          <div class="project-card reveal-up">
+            <div class="project-top"><span class="project-num">03</span><div class="project-icon"><i class="fa-solid fa-table-cells"></i></div></div>
+            <h3>AI-Powered Enterprise Agent</h3>
+            <p>A conversational interface that allows users to connect with unstructured data or tabular data and query data using natural human language with instant insights.</p>
+            <div class="project-tech"><span>NLP</span><span>Pandas</span><span>Flask</span><span>RAG</span></div>
+            <div class="project-footer"><span class="project-arrow"><i class="fa-solid fa-arrow-up-right"></i></span></div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="certifications" class="section">
-    <div class="container">
-      <div class="section-eyebrow reveal">Certifications</div>
-      <h2 class="section-title reveal">Credentials &amp;<br /><em>Learning.</em></h2>
-      <div class="cert-grid">
-        <div class="cert-card reveal-up">
-          <div class="cert-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
-          <div class="cert-body"><h4>Data Analysis with Python</h4><span class="cert-check"><i class="fa-solid fa-circle-check"></i> Verified</span></div>
+<section id="certifications" class="section">
+  <div class="container">
+    <div class="section-eyebrow reveal">Certifications</div>
+    <h2 class="section-title reveal">Credentials &amp;<br /><em>Learning.</em></h2>
+
+    <div class="cert-grid">
+
+      <a href="https://coursera.org/share/1b604c4afe311f40e221609c901b7dbf" target="_blank" class="cert-card reveal-up">
+        <div class="cert-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-body">
+          <h4>Data Analysis with Python</h4>
         </div>
-        <div class="cert-card reveal-up">
-          <div class="cert-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
-          <div class="cert-body"><h4>SQL for Data Science</h4><span class="cert-check"><i class="fa-solid fa-circle-check"></i> Verified</span></div>
+      </a>
+
+      <a href="https://coursera.org/share/59adaca4338042b83e737ae8f1bf529b" target="_blank" class="cert-card reveal-up">
+        <div class="cert-icon-wrap"><i class="fa-solid fa-certificate"></i></div>
+        <div class="cert-body">
+          <h4>SQL for Data Science</h4>
         </div>
-        <div class="cert-card reveal-up cert-featured">
-          <div class="cert-icon-wrap featured"><i class="fa-solid fa-robot"></i></div>
-          <div class="cert-body"><h4>Specialization in Generative AI Learning Path</h4><span class="cert-check"><i class="fa-solid fa-circle-check"></i> Verified</span></div>
+      </a>
+
+      <a href="https://coursera.org/share/ebc5a033dc5507b4f02fa6bfffff7539" target="_blank" class="cert-card reveal-up cert-featured">
+        <div class="cert-icon-wrap featured"><i class="fa-solid fa-robot"></i></div>
+        <div class="cert-body">
+          <h4>Specialization in Generative AI Learning Path</h4>
         </div>
-        <div class="cert-card reveal-up">
-          <div class="cert-icon-wrap"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="cert-body"><h4>Introduction to Responsible AI</h4><span class="cert-check"><i class="fa-solid fa-circle-check"></i> Verified</span></div>
+      </a>
+
+      <a href="https://coursera.org/share/304aaf82093d923d6f0d4dbb016c74c4" target="_blank" class="cert-card reveal-up">
+        <div class="cert-icon-wrap"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="cert-body">
+          <h4>Introduction to Responsible AI</h4>
         </div>
-      </div>
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="blog" class="section section-tint">
     <div class="container">
@@ -310,13 +322,10 @@
             <a href="tel:+917304047744" class="contact-item">
               <span class="ci-icon"><i class="fa-solid fa-phone"></i></span><span>+91 7304047744</span>
             </a>
-            <div class="contact-item">
-              <span class="ci-icon"><i class="fa-solid fa-location-dot"></i></span><span>Thane (W), Mumbai</span>
-            </div>
           </div>
           <div class="social-links">
             <a href="#" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/parth4tiwari" target="_blank" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
         <form class="contact-form reveal-up" id="contactForm" onsubmit="handleFormSubmit(event)">
@@ -346,7 +355,7 @@
   <footer id="footer">
     <div class="container footer-inner">
       <div class="footer-logo">PT<span class="dot">.</span></div>
-      <p class="footer-copy">&copy; 2025 Parth Tiwari. Crafted with precision.</p>
+      <p class="footer-copy">&copy; 2026 Parth Tiwari.</p>
       <div class="footer-links">
         <a href="#hero">Top</a>
         <a href="#about">About</a>

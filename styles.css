@@ -335,13 +335,6 @@ ul { list-style: none; }
   justify-content: center;
   padding-top: 6px;
 }
-.scroll-wheel {
-  width: 3px;
-  height: 8px;
-  background: #60a5fa;
-  border-radius: 3px;
-  animation: scrollWheel 2s ease-in-out infinite;
-}
 
 /* =============================================
    BUTTONS
