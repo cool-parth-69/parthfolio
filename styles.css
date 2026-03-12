@@ -681,7 +681,8 @@ ul { list-style: none; }
   transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
+  /* Changed from pointer to text cursor */
+  cursor: text; 
 }
 .project-card::after {
   content: '';
@@ -754,7 +755,7 @@ ul { list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* slightly increased to push the button down nicely */
   position: relative;
   z-index: 1;
 }
@@ -769,18 +770,39 @@ ul { list-style: none; }
 }
 .project-footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Aligns button to the left, change to flex-end for right */
   position: relative;
   z-index: 1;
 }
-.project-arrow {
-  color: var(--ink-4);
+
+/* NEW BUTTON STYLES */
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--blue);
+  color: #ffffff;
   font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
   transition: all var(--transition);
+  /* Ensure the button itself has the clickable finger cursor! */
+  cursor: pointer; 
 }
-.project-card:hover .project-arrow {
-  color: var(--blue);
-  transform: translate(3px, -3px);
+
+.demo-btn i {
+  transition: transform var(--transition);
+}
+
+.demo-btn:hover {
+  background: var(--ink); /* changes to dark color on hover, adjust if you prefer a different hover color */
+  box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+}
+
+.demo-btn:hover i {
+  transform: translateX(3px);
 }
 
 /* =============================================
@@ -832,6 +854,20 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 0.35rem;
+}
+.cert-link{
+display:inline-flex;
+align-items:center;
+gap:6px;
+margin-top:8px;
+font-size:0.85rem;
+font-weight:500;
+text-decoration:none;
+color:var(--blue);
+transition:0.2s;
+}
+.cert-link:hover{
+gap:10px;
 }
 
 /* =============================================
@@ -1110,20 +1146,42 @@ ul { list-style: none; }
   #navbar.scrolled { padding: 0.85rem 1.25rem; }
 
   .nav-links {
-    display: none;
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: 72vw; max-width: 300px;
-    background: #fff;
-    border-left: 1px solid var(--border);
+    display: flex;
+    position: absolute;
+    top: 100%;       /* Anchors it right below the header */
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    background: var(--bg-card);  /* Gives it a solid white background to hide content underneath */
+    border-left: none;
+    border-bottom: 1px solid var(--border);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 2rem 2rem;
-    gap: 1.75rem;
-    z-index: 999;
-    box-shadow: -12px 0 40px rgba(15,17,23,0.12);
+    align-items: center;  /* Centers links nicely on mobile */
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+    z-index: -1;      /* Keeps it behind the navbar when retracting */
+    box-shadow: 0 10px 25px rgba(15,17,23,0.1);
+
+    /* Setup for slide-down animation */
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.3s ease, 
+                visibility 0.4s;
   }
-  .nav-links.open { display: flex; }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ensure CTA button looks good centered */
+  .nav-links .nav-cta {
+    margin-top: 0.5rem;
+  }
   .nav-links a { font-size: 1.1rem; color: var(--ink); }
   .nav-toggle { display: flex; z-index: 1000; }
 

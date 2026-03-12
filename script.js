@@ -12,30 +12,23 @@ window.addEventListener('scroll', () => {
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
+// Toggle menu on hamburger click
 navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  const spans  = navToggle.querySelectorAll('span');
-  if (isOpen) {
-    anime({ targets: spans[0], rotate: 45,  translateY: 7,  duration: 280, easing: 'easeOutQuad' });
-    anime({ targets: spans[1], opacity: 0,  duration: 180 });
-    anime({ targets: spans[2], rotate: -45, translateY: -7, duration: 280, easing: 'easeOutQuad' });
-  } else {
-    anime({ targets: spans[0], rotate: 0, translateY: 0, duration: 280, easing: 'easeOutQuad' });
-    anime({ targets: spans[1], opacity: 1, duration: 200 });
-    anime({ targets: spans[2], rotate: 0, translateY: 0, duration: 280, easing: 'easeOutQuad' });
-  }
+  navLinks.classList.toggle('open');
 });
+
+// Close menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
-    const spans = navToggle.querySelectorAll('span');
-    anime({ targets: spans[0], rotate: 0, translateY: 0, duration: 280, easing: 'easeOutQuad' });
-    anime({ targets: spans[1], opacity: 1, duration: 200 });
-    anime({ targets: spans[2], rotate: 0, translateY: 0, duration: 280, easing: 'easeOutQuad' });
   });
 });
+
+// Close menu when clicking outside
 document.addEventListener('click', e => {
-  if (!navbar.contains(e.target)) navLinks.classList.remove('open');
+  if (!navbar.contains(e.target)) {
+    navLinks.classList.remove('open');
+  }
 });
 
 /* ── THREE.JS HERO (dark section) ───────────── */
@@ -314,14 +307,43 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 })();
 
 /* ── CONTACT FORM ───────────────────────────── */
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
+/* ── CONTACT FORM ───────────────────────────── */
+async function handleFormSubmit(e) {
+  e.preventDefault(); // Stop page from reloading
+  
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
   const suc = document.getElementById('formSuccess');
+  
+  // 1. Play your button shrink animation
   anime({ targets: btn, scale: [1, 0.95, 1], duration: 280, easing: 'easeInOutQuad' });
-  setTimeout(() => {
-    suc.style.display = 'block';
-    anime({ targets: suc, opacity: [0, 1], translateY: [8, 0], duration: 380, easing: 'easeOutQuad' });
-    e.target.reset();
-  }, 350);
+  
+  // Change button text to show it's sending
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '<span>Sending...</span><i class="fa-solid fa-spinner fa-spin"></i>';
+
+  try {
+    // 2. Actually send the data to Formspree
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      // 3. If successful, show your success message and clear the form
+      suc.style.display = 'block';
+      anime({ targets: suc, opacity: [0, 1], translateY: [8, 0], duration: 380, easing: 'easeOutQuad' });
+      form.reset();
+    } else {
+      alert("Oops! There was a problem sending your message. Please try again.");
+    }
+  } catch (error) {
+    alert("Oops! There was a network error. Please try again.");
+  } finally {
+    // Put the button text back to normal
+    btn.innerHTML = originalText;
+  }
 }
